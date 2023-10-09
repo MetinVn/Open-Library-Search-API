@@ -8,6 +8,8 @@ function App() {
   const [error,setError] = useState(false) 
   function check(){
     if(title === ''){
+      setError(true)
+      setWait(true)
       setLoading(true)
       setTimeout(()=>{
         setLoading(false)
@@ -19,7 +21,6 @@ function App() {
         fetch(`https://openlibrary.org/search.json?q=${title}`)
         .then(res=>res.json())
         .then((resp)=>{
-          console.log(resp.docs)
           setDatas(resp.docs)
             setTimeout(()=>{
               setLoading(false)
