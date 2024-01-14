@@ -38,10 +38,15 @@ function App() {
     
   return (
     <>
-    <div className="flex flex-col justify-center items-center text-center gap-5 p-10 sm:p-20 min-h-screen h-auto bg-slate-700">
-        <h1 className="text-5xl text-white">Open Library Search API</h1>
-        <input type="text" autoComplete='true' className="p-1 px-5 w-full max-w-[400px] outline-none" onChange={(e)=>setTitle(e.target.value)} placeholder="Search book title"/>
-        <button className="border-[1px] w-full max-w-[400px] text-white rounded hover:bg-white hover:text-black duration-200 active:scale-95" onClick={()=>check()}>Search</button>
+    <div className="flex flex-col justify-center items-center text-center gap-5 p-10 sm:p-20 min-h-screen h-auto bg-white">
+        <h1 className="text-5xl text-gray-400">Open Library Search API</h1>
+        <input type="text" autoComplete='true' className="p-1 px-5 w-full max-w-[400px] outline-none text-white bg-blue-400 placeholder:text-white shadow-inner shadow-black/40" onChange={(e)=>setTitle(e.target.value)} placeholder="Search book title here"/>
+        <button className="border-[1px] w-full max-w-[400px] bg-blue-300 text-white rounded hover:bg-blue-400 duration-200 active:scale-95" onClick={()=>check()}>Search</button>
+        {loading?
+        <BarLoader color="green"/>:
+          error?<span className="border-2 border-red-800 px-4 py-3 rounded-md bg-red-300 text-red-800">This field can not be empty</span>
+          :''
+        }
       <div className="rounded-lg">
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {error?'':
@@ -54,11 +59,7 @@ function App() {
             ))
           }
         </ul>
-        {loading?
-        <BarLoader color="green"/>:
-          error?<span className="border-2 border-red-800 px-4 py-3 rounded-md bg-red-300 text-red-800">This field can not be empty</span>
-          :''
-        }
+        
       </div>
     </div>
     </>
