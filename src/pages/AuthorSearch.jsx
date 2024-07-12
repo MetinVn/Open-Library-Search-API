@@ -10,7 +10,6 @@ import {
   Box,
   CircularProgress,
   Grid,
-  Paper,
 } from "@mui/material";
 import { openDB } from "idb";
 import Sidebar from "../layouts/Sidebar";
@@ -99,14 +98,12 @@ function AuthorSearch() {
     storeData("searchResultsAuthor", null);
     storeData("searchResultsTextAuthor", null);
     setClearable(false);
-    console.log("Content Cleared!");
   };
 
   const check = async () => {
     const titleValue = inputRef.current.value;
 
     if (titleValue === "") {
-      console.log("Empty query typed, not firing the function");
       setLoading(false);
       handleOpen("This field cannot be empty");
       return;
@@ -115,7 +112,6 @@ function AuthorSearch() {
     try {
       const storedQuery = await getStoredQuery();
       if (storedQuery === titleValue) {
-        console.log("Same query already executed, skipping...");
         handleOpen("Same query already executed, skipping...");
         setLoading(false);
         return;
@@ -141,13 +137,11 @@ function AuthorSearch() {
       clearTimeout(timer);
       setShowWaitMessage(false);
 
-      console.log("********* Author Search Triggered *********");
       setDatas(resp.docs);
       setResponseHeader(resp.numFound);
       storeData("searchResultsAuthor", JSON.stringify(resp));
       storeData("searchResultsTextAuthor", titleValue);
       setClearable(true);
-      console.log("Clearable: " + clearable);
     } catch (error) {
       if (error.name === "AbortError") {
         console.log("Fetch request cancelled.");
@@ -206,7 +200,6 @@ function AuthorSearch() {
       });
       return sortedData;
     });
-    console.log("Sorted Authors A to Z ");
   };
 
   const sortAuthorsDescending = () => {
@@ -219,7 +212,6 @@ function AuthorSearch() {
       });
       return sortedData;
     });
-    console.log("Sorted Authors A to Z ");
   };
 
   const sortAuthorsByWorkCountAscending = () => {

@@ -95,14 +95,12 @@ function BookSearch() {
     storeData("searchResults", null);
     storeData("searchResultsText", null);
     setClearable(false);
-    console.log("Content Cleared!");
   };
 
   const check = async () => {
     const titleValue = inputRef.current.value;
 
     if (titleValue === "") {
-      console.log("Empty query typed, not firing the function");
       setLoading(false);
       handleOpen("This field cannot be empty");
       return;
@@ -112,7 +110,6 @@ function BookSearch() {
       const storedQuery = await getStoredQuery();
 
       if (storedQuery === titleValue) {
-        console.log("Same query already executed, skipping...");
         handleOpen("Same query already executed, skipping...");
         setLoading(false);
         return;
@@ -138,12 +135,10 @@ function BookSearch() {
       clearTimeout(timer);
       setShowWaitMessage(false);
 
-      console.log("********* Book Search Triggered *********");
       setDatas(resp.docs);
       storeData("searchResults", JSON.stringify(resp));
       storeData("searchResultsText", titleValue);
       setClearable(true);
-      console.log("Clearable: " + clearable);
     } catch (error) {
       if (error.name === "AbortError") {
         console.log("Fetch request cancelled.");
@@ -202,7 +197,6 @@ function BookSearch() {
       });
       return sortedData;
     });
-    console.log("Sorted Books A to Z ");
   };
   const sortBooksDescending = () => {
     setDatas((prevData) => {
@@ -214,7 +208,6 @@ function BookSearch() {
       });
       return sortedData;
     });
-    console.log("Sorted Books Z to A ");
   };
   const sortBooksByReadCountDescending = () => {
     setDatas((prevData) => {
@@ -225,7 +218,6 @@ function BookSearch() {
       });
       return sortedByReadCount;
     });
-    console.log("Sorted Books By Read Count Descending ");
   };
   const sortBooksByReadCountAscending = () => {
     setDatas((prevData) => {
@@ -236,7 +228,6 @@ function BookSearch() {
       });
       return sortedByReadCount;
     });
-    console.log("Sorted Books By Read Count Ascending ");
   };
   const sortBooksByAlreadyRedCountAscending = () => {
     setDatas((prevData) => {

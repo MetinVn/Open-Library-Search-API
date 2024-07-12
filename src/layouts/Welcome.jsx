@@ -21,7 +21,6 @@ export default function Welcome() {
     const store = tx.objectStore("keyval");
     await store.clear();
     await tx.done;
-    console.log("IndexedDB database cleared successfully.");
   };
   function loading() {
     setLoad(true);
