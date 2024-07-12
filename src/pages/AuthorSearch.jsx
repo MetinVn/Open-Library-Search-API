@@ -444,7 +444,7 @@ function AuthorSearch() {
         <Grid container spacing={2} justifyContent="center">
           {data.slice(0, visibleItems).map((item, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Link to={`/home/author/${item.key}`} className="no-underline">
+              <Link to={`/author/${item.key}`} className="no-underline">
                 <Box
                   sx={{
                     border: `1px solid ${

@@ -8,24 +8,12 @@ import AuthorSearch from "./pages/AuthorSearch.jsx";
 import BookSearch from "./pages/BookSearch.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <Router>
+    <Router basename="/Open-Library-Search-API">
       <Routes>
-        <Route exact path="Open-Library-Search-API/home/" Component={App} />
-        <Route
-          exact
-          path="Open-Library-Search-API/home/author/:authorKey"
-          Component={AuthorInfo}
-        />
-        <Route
-          exact
-          path="Open-Library-Search-API/home/author/"
-          Component={AuthorSearch}
-        />
-        <Route
-          exact
-          path="Open-Library-Search-API/home/books/"
-          Component={BookSearch}
-        />
+        <Route exact path="/" Component={App} />
+        <Route exact path="/author/:authorKey" Component={AuthorInfo} />
+        <Route exact path="/author/" Component={AuthorSearch} />
+        <Route exact path="/books/" Component={BookSearch} />
       </Routes>
     </Router>
   </>

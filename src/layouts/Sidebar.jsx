@@ -15,9 +15,9 @@ const Sidebar = ({ colors }) => {
 
   const handleNavigation = (navigation) => {
     if (navigation === "author") {
-      navigate("/home/author");
+      navigate("/author");
     } else if (navigation === "book") {
-      navigate("/home/books");
+      navigate("/books");
     }
   };
 

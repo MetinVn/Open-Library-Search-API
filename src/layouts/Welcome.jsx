@@ -27,7 +27,7 @@ export default function Welcome() {
     setLoad(true);
     setTimeout(() => {
       setLoad(false);
-      navigate("/home/books");
+      navigate("./books");
     }, 1200);
   }
 
