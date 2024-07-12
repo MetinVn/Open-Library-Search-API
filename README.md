@@ -5,7 +5,9 @@ This project is a React application built with Vite, providing an interface to s
 ## Features
 
 - Search for authors by name
+- Search for books
 - Display detailed information about authors, including their bio, birth date, Wikipedia link, and official site (if available)
+- Display detailed information about books, including auhtor name, wants to read count, already red count, currently reading count (if available)
 - Utilizes Material-UI for components and styling
 - Responsive design with dark mode support
 - Efficiently manages large data sets by storing search results in IndexedDB and retrieving them as needed
