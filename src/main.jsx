@@ -10,10 +10,22 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     <Router>
       <Routes>
-        <Route exact path="/home/" Component={App} />
-        <Route exact path="/home/author/:authorKey" Component={AuthorInfo} />
-        <Route exact path="/home/author/" Component={AuthorSearch} />
-        <Route exact path="/home/books/" Component={BookSearch} />
+        <Route exact path="Open-Library-Search-API/home/" Component={App} />
+        <Route
+          exact
+          path="Open-Library-Search-API/home/author/:authorKey"
+          Component={AuthorInfo}
+        />
+        <Route
+          exact
+          path="Open-Library-Search-API/home/author/"
+          Component={AuthorSearch}
+        />
+        <Route
+          exact
+          path="Open-Library-Search-API/home/books/"
+          Component={BookSearch}
+        />
       </Routes>
     </Router>
   </>
