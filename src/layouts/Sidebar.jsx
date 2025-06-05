@@ -39,7 +39,7 @@ const Sidebar = ({ colors }) => {
       ref={sidebarRef}
       className="fixed top-0 left-[50%] transform -translate-x-1/2 z-[16]">
       <Box
-        className={`flex flex-row rounded-b-md w-[30%] min-w-fit mx-auto items-center transition-all duration-300 ease-in-out ${
+        className={`flex flex-row w-[30%] min-w-fit mx-auto items-center transition-all duration-300 ease-in-out ${
           isExpanded
             ? "h-fit mt-20 sm:h-[60px] sm:mt-0 md:h-[80px] py-4"
             : "h-0 py-0"
