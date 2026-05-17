@@ -9,9 +9,10 @@ const BookCard = ({ item, themeColor }) => {
     <Box
       sx={{
         p: 2,
+        m: 1,
         borderRadius: 2,
         border: 1,
-        borderColor: color === "dark" ? "success.main" : "primary.main",
+        borderColor: color === "dark" ? "gray" : "primary.main",
         bgcolor: color === "dark" ? "#1A2027" : "white",
         color: color === "dark" ? "white" : "black",
         transition: "0.3s",
