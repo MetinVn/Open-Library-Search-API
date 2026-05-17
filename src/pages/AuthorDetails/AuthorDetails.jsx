@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Box, Typography, CircularProgress, Link as MuiLink, Paper, Button } from "@mui/material";
-import { fetchWithSignal } from "../../utils/fetchWithSignal";
+import { fetchWithSignal } from "../../services/fetchWithSignal";
 import useTheme from "../../hooks/useTheme";
 import Sidebar from "../../components/Sidebar";
 
