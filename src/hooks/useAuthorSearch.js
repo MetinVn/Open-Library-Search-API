@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import useIndexDB, { AUTHOR_STORE, DB_NAME } from "./useIndexDB";
 import useDebounce from "./useDebounce";
-import { fetchWithSignal } from "../utils/fetchWithSignal";
+import { fetchWithSignal } from "../services/fetchWithSignal";
 
 const CACHE_KEY_AUTHORS = "cachedAuthors";
 const CACHE_KEY_QUERY = "cachedAuthorQuery";
