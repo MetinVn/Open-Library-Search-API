@@ -2,6 +2,10 @@
 
 A modern React + Vite app for searching books and authors using the Open Library API. Built with responsive design, intelligent caching, and a clean user experience.
 
+## App demo
+
+![Open Library Search - Live Demo](./public/Open_Library_GIF.gif)
+
 Quick start
 
 ```bash
@@ -27,6 +31,10 @@ How it works
 - Click any author to view their profile with full bio and bibliography.
 - Results are automatically cached, so returning searches are instant.
 - Use the theme toggle in the sidebar to switch between light and dark modes.
+
+Local storage & caching
+
+Search results and images are stored in IndexedDB (browser-based database) across four stores: `book_search` and `author_search` for query results, `showcase_data` for featured content, and `image_cache` for book/author covers. This enables fast repeat searches and graceful offline browsing without hitting the API again.
 
 Tech stack
 
