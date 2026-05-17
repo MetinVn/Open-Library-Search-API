@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import useIndexDB, { BOOK_STORE, DB_NAME, IMAGE_STORE } from "./useIndexDB";
 import useDebounce from "./useDebounce";
-import { fetchWithSignal } from "../utils/fetchWithSignal";
+import { fetchWithSignal } from "../services/fetchWithSignal";
 
 const CACHE_KEY_BOOKS = "cachedBooks";
 const CACHE_KEY_QUERY = "cachedBookQuery";
